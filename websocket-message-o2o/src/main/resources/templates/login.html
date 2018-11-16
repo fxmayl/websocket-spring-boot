@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登陆页面</title>
+</head>
+<body>
+<div th:if="${param.logout}">
+    你已注销
+</div>
+<div th:if="${param.error}">
+    无效的登陆密码和账号
+</div>
+<!--/j_spring_security_check-->
+<form th:action="@{/login}" method="post">
+    <div><label>账号 ：<input type="text" id="username" name="username"/></label></div>
+    <div><label>密码 ：<input type="password" id="password" name="password"/></label></div>
+    <div><input type="submit" value="登陆"/></div>
+</form>
+</body>
+</html>
